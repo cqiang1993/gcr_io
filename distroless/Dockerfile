@@ -1,2 +1,2 @@
-FROM gcr.io/distroless/static:latest-arm64
+FROM gcr.io/distroless/static:latest-arm
 MAINTAINER cqiang1993@163.com
