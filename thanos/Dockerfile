@@ -4,11 +4,6 @@ WORKDIR $GOPATH/src/github.com/thanos-io/thanos
 # Change in the docker context invalidates the cache so to leverage docker
 # layer caching, moving update and installing apk packages above COPY cmd
 # More info https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#leverage-build-cache
-RUN sed -i 's@dl-cdn.alpinelinux.org@mirrors.aliyun.com@g' /etc/apk/repositories
-
-ARG GO111MODULE=on
-
-ARG GOPROXY=https://goproxy.io
 
 RUN apk update && apk upgrade && apk add --no-cache alpine-sdk
 # Replaced ADD with COPY as add is generally to download content form link or tar files
